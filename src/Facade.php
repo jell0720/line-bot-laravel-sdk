@@ -2,9 +2,9 @@
 
 namespace Jordanator\LineBot;
 
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Facade as BaseFacade;
 
-class Line extends Facade
+class Facade extends BaseFacade
 {
     /**
      * Get the registered name of the component
@@ -13,6 +13,6 @@ class Line extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'Line';
+        return 'LineBot';
     }
 }

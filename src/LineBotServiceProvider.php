@@ -1,18 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lalith
- * Date: 3/10/16
- * Time: 12:59 PM
- */
 
-namespace Jordanator\LineBot\Providers;
+namespace Jordanator\LineBot;
 
 use Illuminate\Support\ServiceProvider;
-use Jordanator\LineBot\Line;
-use Jordanator\LineBot\LineManager;
 
-class LineServiceProvider extends ServiceProvider
+class LineBotServiceProvider extends ServiceProvider
 {
     public function register()
     {
@@ -35,13 +27,13 @@ class LineServiceProvider extends ServiceProvider
 
     private function registerLine()
     {
-        $this->app->singleton(Line::class, function($app) {
+        $this->app->singleton('LineBot', function($app) {
             $args = [
-                $app['line.channel.secret'],
-                $app['line.channel.end_point']
+                'channelSecret' => $app['config']['line.channel.secret'],
+                'endpointBase'  => $app['config']['line.channel.end_point']
             ];
 
-            return new LineManager($app['line.channel.token'], $args);
+            return new LineBotManager($app['config']['line.channel.token'], $args);
         });
     }
 }

@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Lalith Mohan Tadigadapa
- * Date: 3/10/16
- * Time: 12:39 PM
- */
 
 namespace Jordanator\LineBot;
 
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 
-class LineManager
+class LineBotManager
 {
     private $token;
     private $secret;
