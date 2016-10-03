@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "php": ">=5.5.9",
         "illuminate/support": "^5.3",
         "illuminate/container": "^5.3",
         "linecorp/line-bot-sdk": "^1.0"
