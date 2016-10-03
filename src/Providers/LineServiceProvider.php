@@ -6,9 +6,10 @@
  * Time: 12:59 PM
  */
 
-namespace Jordanator\LineBot;
+namespace Jordanator\LineBot\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Jordanator\LineBot\Line;
 
 class LineServiceProvider extends ServiceProvider
 {
