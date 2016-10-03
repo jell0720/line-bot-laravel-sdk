@@ -11,7 +11,7 @@ namespace Jordanator\LineBot;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 
-class Line
+class LineManager
 {
     private $token;
     private $secret;
