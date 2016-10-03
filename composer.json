@@ -1,5 +1,5 @@
 {
-    "name": "jordanator/line-bot-sdk-laravel",
+    "name": "jordanator/line-bot-laravel-sdk",
     "description": "SDK of the LINE BOT API for Laravel",
     "type": "library",
     "license": "MIT",
