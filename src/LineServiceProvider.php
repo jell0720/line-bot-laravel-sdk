@@ -16,6 +16,25 @@ class LineServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->registerLine();
+    }
+
+    public function boot()
+    {
+        $this->bootLine();
+    }
+
+    private function bootLine()
+    {
+        $configFile = __DIR__ . '/../config/line.php';
+
+        $this->publishes([
+            $configFile => config_path('line.php'),
+        ]);
+    }
+
+    private function registerLine()
+    {
         $this->app->singleton(Line::class, function($app) {
             $args = [
                 $app['line.channel.secret'],
@@ -24,14 +43,5 @@ class LineServiceProvider extends ServiceProvider
 
             return new LineManager($app['line.channel.token'], $args);
         });
-    }
-
-    public function boot()
-    {
-        $configFile = __DIR__ . '/../config/line.php';
-
-        $this->publishes([
-            $configFile => config_path('line.php'),
-        ]);
     }
 }

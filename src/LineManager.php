@@ -15,6 +15,8 @@ class LineManager
 {
     private $token;
     private $secret;
+    private $httpClient;
+    private $bot;
 
     public function __construct($token, $args)
     {
@@ -25,5 +27,41 @@ class LineManager
         $this->bot = new LINEBot($this->httpClient, $args);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param mixed $token
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * @param mixed $secret
+     */
+    public function setSecret($secret)
+    {
+        $this->secret = $secret;
+    }
+
+    public function __call($name, $arguments)
+    {
+        $this->bot->$name($arguments);
+    }
 
 }
