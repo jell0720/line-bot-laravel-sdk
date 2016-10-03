@@ -1,0 +1,22 @@
+{
+    "name": "jordanator/line-bot-sdk-laravel",
+    "description": "SDK of the LINE BOT API for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lalith Tadigadapa",
+            "email": "tlalithmohan@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5.3",
+        "illuminate/container": "^5.3",
+        "linecorp/line-bot-sdk": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jordanator\\LineBot\\": "src/"
+        }
+    }
+}
