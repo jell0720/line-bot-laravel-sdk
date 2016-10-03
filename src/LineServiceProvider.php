@@ -10,6 +10,7 @@ namespace Jordanator\LineBot\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Jordanator\LineBot\Line;
+use Jordanator\LineBot\LineManager;
 
 class LineServiceProvider extends ServiceProvider
 {
@@ -21,7 +22,7 @@ class LineServiceProvider extends ServiceProvider
                 $app['line.channel.end_point']
             ];
 
-            return new Line($app['line.channel.token'], $args);
+            return new LineManager($app['line.channel.token'], $args);
         });
     }
 
