@@ -1,6 +1,6 @@
 # **Laravel Line Bot SDK**
 
-This is a Laravel wrapper for [line-bot-sdk-php](https://github.com/line/line-bot-sdk-php)
+This is a (Work in Progress) Laravel wrapper for [line-bot-sdk-php](https://github.com/line/line-bot-sdk-php)
  
 # **Installation**
 
